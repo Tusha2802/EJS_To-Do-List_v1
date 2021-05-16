@@ -1,0 +1,24 @@
+<%- include("Header") -%>
+
+    <div class="box" id="heading">
+        <h1> To-Do List (<%= title %>)</h1>
+    </div>
+    
+    <div class="box">
+        <% for(var j=0; j<newList.length; j++) { %>
+            <% if(newList[j].length !== 0) { %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p> <%= newList[j] %></p>           
+                </div>
+                <% } %>
+        <% } %>    
+        <form action="/" method="POST">
+            <input type="text" name="item" placeholder="Enter New Item" autocomplete="off"/>
+            <button type="submit" name="btn" value=<%= title %>>+</button>
+        </form>
+        
+    </div>
+
+<%- include("Footer") -%>
+    
