@@ -57,6 +57,7 @@ html {
   }
   
   button {
+    margin: 8px 0 -6px 0;
     min-height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -64,14 +65,14 @@ html {
     background-color: #A683E3;
     color: #fff;
     font-size: 30px;
-    padding-bottom: 6px;
+    padding-bottom: 0px;
     border-width: 0;
   }
   
   input[type="text"] {
     text-align: center;
-    height: 60px;
-    top: 10px;
+    height: 55px;
+    top: 0px;
     border: none;
     background: transparent;
     font-size: 20px;
