@@ -1,23 +1,21 @@
 <%- include("Header") -%>
 
     <div class="box" id="heading">
-        <h1> To-Do List <br>(<%= title %>)</h1>
+        <h1> To-Do List (<%= title %>)</h1>
     </div>
     
     <div class="box">
-        <% newList.forEach((j) => {  %>
-            <% if(j.length !== 0) { %>
-                <form action="/delete" method="POST">
-                    <div class="item">
-                        <input type="checkbox" onchange="this.form.submit()" name="checkbox" value="<%=j.id%>+<%=title %>">
-                        <p> <%= j.itemName %></p>           
-                    </div>
-                </form>
-            <% } %>
-        <% }) %>    
-        <form class="item" action="/" method="POST">
+        <% for(var j=0; j<newList.length; j++) { %>
+            <% if(newList[j].length !== 0) { %>
+                <div class="item">
+                    <input type="checkbox">
+                    <p> <%= newList[j] %></p>           
+                </div>
+                <% } %>
+        <% } %>    
+        <form action="/" method="POST">
             <input type="text" name="item" placeholder="Enter New Item" autocomplete="off"/>
-            <button type="submit" name="btn" value="<%= title %>">+</button>
+            <button type="submit" name="btn" value=<%= title %>>+</button>
         </form>
         
     </div>
